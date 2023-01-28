@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    height: 25vh;
+    background-color: rgb(10, 10, 15);
+    position: relative;
+    z-index: 1;
+}
+
+nav {
+    height: 10vh;
+    background-color: #101b39;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.Logo h1 {
+    font-family: 'Play', sans-serif;
+    color: #e9e8ee;
+    margin-left: 10px;
+    font-size: 3vw;
+    padding: auto;
+    margin-bottom: 0px;
+}
+
+.Logo img {
+    max-height: 8vh;
+}
+
+.SearchBar {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.SearchBar input {
+    font-family: 'Play', sans-serif;
+    height: 5vh;
+    font-size: 30px;
+}
+
+.SearchBar button {
+    font-family: 'Play', sans-serif;
+    font-size: 30px;
+}
+
+.BGTarjetaNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6f6d72;
+    box-shadow: 0px 20px 35px black;
+    height: 5vh;
+    width: 10vw;
+    margin-inline-start: 1vw;
+    clip-path: polygon(10% 0, 70% 0%, 100% 0, 100% 75%, 90% 100%, 30% 100%, 0 100%, 0 25%);
+    overflow: hidden;
+}
+
+.BGTarjetaNav h1 {
+    font-family: 'Play', sans-serif;
+    color: black;
+    font-size: 2vw;
+    z-index: 10;
+}
+
+.BGTarjetaNav:hover {
+    background-color: #333136;
+    cursor: pointer;
+}
+
+
+.Navegacion {
+    display: flex;
+}
+
+.Navegacion a {
+    text-decoration: none;
+}
+
+.SearchBar input {
+    max-width: 14vw;
+    font-size: 2vw;
+}
+
+.SearchBar button {
+    max-width: 10vw;
+    font-size: 2vw;
+}
+
+
+.SearchButton {
+    display: none;
+}
+
+/*display default:: display:block*/
+
+
+
+@media (max-width: 776px) {
+    .SearchBar {
+        display: none;
+    }
+
+    .Logo h1 {
+        display: none;
+    }
+
+    .SearchButton {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .searchBox {
+        width: 5vh;
+        height: 5vh;
+        background-color: #6f6d72;
+        border-radius: 10px;
+        border-style: none;
+    }
+
+    .searchBox img {
+        max-width: 90%;
+    }
+
+    .BGTarjetaNav {
+        margin-inline-start: 2vw;
+        width: 15vw;
+    }
+
+    .BGTarjetaNav h1 {
+        font-size: 3vw;
+    }
+
+    .inputFieldButton {
+
+        /* width: 80vw; */
+        height: 30px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 7vw;
+        border: 0;
+        top: 8vh;
+        border-style: none;
+        background: transparent;
+        border-bottom: 2px solid gray;
+        opacity: 0;
+        font-family: 'Play', sans-serif;
+        font-size: 20px;
+        color: gray;
+        outline: none
+    }
+
+    .searchBox:focus ~  .inputFieldButton{
+        top: 10vh;
+        opacity: 1;
+        transition: all 500ms cubic-bezier(.19,.56,.75,.88);
+    }
+    
+    .inputFieldButton:focus{
+        top: 10vh;
+        opacity: 1;
+    }
+    
+}
