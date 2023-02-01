@@ -266,6 +266,7 @@ main {
 
 .imagenAumentada img{
     max-width: 95vw;
+    max-height: 90vh;
     z-index: 30;
 }
 
