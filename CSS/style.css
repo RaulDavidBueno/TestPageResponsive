@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
     margin-bottom: 0;
 }
+
 footer {
     height: 25vh;
     background-color: rgb(10, 10, 15);
@@ -114,17 +118,17 @@ nav {
 
 /*display default:: display:block*/
 
-.coverPage{
+.coverPage {
     max-width: 90vw;
 }
 
-main{
+main {
     background-color: #333136;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 /* .Borde{
@@ -132,7 +136,7 @@ main{
     margin-top: 15px;
 } */
 
-.Borde{
+.Borde {
     background-image: url(../assets/borde6.webp);
     background-repeat: no-repeat;
     width: 100vw;
@@ -146,21 +150,136 @@ main{
 }
 
 
-.Borde h1{
-    padding: 6%;  
+.Borde h1 {
+    padding: 6%;
     padding-bottom: 1%;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
 }
 
-.Borde h2{
+.Borde h2 {
     padding-left: 9%;
     padding-right: 9%;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
 }
 
+.carousel {
+    width: 90vw;
+
+}
+
+.Gameplay {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.carousel-inner {
+
+    clip-path: polygon(0 0, 95% 0, 100% 10%, 100% 100%, 5% 100%, 0% 90%);
+    box-shadow: 0px 0px 79px 60px rgba(0, 224, 253, 0.5);
+}
+
+.carousel-inner::before {
+    width: 115%;
+    height: 115%;
+    background-color: cyan;
+    content: '';
+
+}
+
+.Gameplay h1 {
+    padding: 6%;
+    padding-bottom: 1%;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+}
+
+.Gameplay h2 {
+    padding-left: 9%;
+    padding-right: 9%;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.tarjeta{
+    position: relative;
+    margin: 20px;
+}
+.tarjeta img {
+    max-width: 20vw;
+    position: relative;
+
+}
+
+.tarjeta h1 {
+    font-size: 1.3vw;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+    position: relative;
+
+}
+
+.tarjeta::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #6f6d72;
+    position: absolute;
+    z-index: 0;
+}
+
+.BotonImagen:focus ~ .imagenAumentada{
+    display: flex;
+    
+}
+
+.BotonImagen:hover{
+    cursor: pointer;
+}
+.BotonImagen img{
+    z-index: 3;
+}
+.imagenAumentada{
+
+    position: fixed;
+    background-color: #0000009c;
+    width: 100vw;
+    height: 100vh;
+    top: 0vh;
+    right: 0;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.imagenAumentada img{
+    max-width: 95vw;
+    z-index: 30;
+}
+
+.imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta button{
+    position: relative;
+    z-index: 1;
+    border: none;
+}
 
 @media (max-width: 776px) {
     .SearchBar {
@@ -197,12 +316,15 @@ main{
         font-size: 3vw;
     }
 
+    .test{
+        display: none;
+    }
     .inputFieldButton {
 
         /* width: 80vw; */
-        height: 30px;
+        height: 0px;
         position: absolute;
-        left: 0;
+        left: 150vw;
         right: 0;
         margin: 0 7vw;
         border: 0;
@@ -211,33 +333,48 @@ main{
         background: transparent;
         border-bottom: 2px solid gray;
         opacity: 0;
+        display: inline-block;
         font-family: 'Play', sans-serif;
         font-size: 20px;
         color: gray;
-        outline: none
+        outline: none;
+        
     }
 
-    .searchBox:focus ~  .inputFieldButton{
+    .searchBox:focus~.inputFieldButton {
+        
+        left: 0;
+        height: 30px;
         top: 10vh;
         opacity: 1;
-        transition: all 500ms cubic-bezier(.19,.56,.75,.88);
+        transition: height 500ms, top 500ms, opacity 500ms   cubic-bezier(.19, .56, .75, .88);
     }
-    
-    .inputFieldButton:focus{
+
+    .inputFieldButton:focus {
+        left: 0;
+        height: 30px;
         top: 10vh;
         opacity: 1;
     }
-    
-    .Borde h1{
-     font-size: calc(1.375rem + 1vw);  
+
+    .Borde h1 {
+        font-size: calc(1.375rem + 1vw);
     }
-    
-    .Borde h2{
+
+    .Borde h2 {
         font-size: calc(1.375rem + 0.1vw);
     }
-    
-    .Borde{
+
+    .Borde {
         background-image: url(../assets/BordeLargo.webp);
         height: 142vw;
+    }
+
+    .tarjeta h1 {
+        font-size: 4vw;
+    }
+    
+    .tarjeta img{
+        max-width: 70vw;
     }
 }
